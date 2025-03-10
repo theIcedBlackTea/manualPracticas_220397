@@ -1,0 +1,26 @@
+<nav aria-label="breadcrumb" class="py-3 px-6 bg-gray-50 border-b border-gray-200">
+    <ol class="flex flex-wrap items-center text-sm text-gray-600">
+      <li *ngFor="let breadcrumb of breadcrumbs; let last = last; let i = index" 
+          [class.font-semibold]="last"
+          [class.text-blue-600]="last">
+        
+        <!-- Si no es el último elemento, mostrar como enlace -->
+        <ng-container *ngIf="!last">
+          <a [routerLink]="breadcrumb.url" 
+             class="flex items-center hover:text-blue-600 transition-colors">
+            <mat-icon *ngIf="breadcrumb.icon" class="text-sm h-4 w-4 mr-1">{{breadcrumb.icon}}</mat-icon>
+            <span>{{breadcrumb.label}}</span>
+          </a>
+          
+          <!-- Separador (solo si no es el último elemento) -->
+          <span class="mx-2 text-gray-400">/</span>
+        </ng-container>
+        
+        <!-- Si es el último elemento, mostrar como texto -->
+        <div *ngIf="last" class="flex items-center text-blue-600">
+          <mat-icon *ngIf="breadcrumb.icon" class="text-sm h-4 w-4 mr-1">{{breadcrumb.icon}}</mat-icon>
+          <span>{{breadcrumb.label}}</span>
+        </div>
+      </li>
+    </ol>
+  </nav>

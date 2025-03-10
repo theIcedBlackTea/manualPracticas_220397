@@ -1,0 +1,104 @@
+.body{
+    height: 700px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212; /* Fondo oscuro */
+}
+
+/* Contenedor de Login con efecto Neon */
+.login-container {
+    width: 350px;
+    padding: 30px;
+    background: #1e1e1e; /* Fondo oscuro del contenedor */
+    border: 2px solid #00ff99; /* Borde verde neón */
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.5), 0 0 30px rgba(0, 255, 153, 0.5); /* Sombras neón */
+    animation: fadeIn 1s ease-out;
+    position: relative;
+    z-index: 10;
+  }
+  
+  h2 {
+    color: #00ff99; /* Texto verde neón */
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99; /* Efecto de sombra de texto */
+  }
+  
+  input {
+    display: block;
+    width: 85%;
+    padding: 12px 20px;
+    margin: 15px 0;
+    border: 1px solid #00ff99; /* Borde verde neón */
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #121212; /* Fondo oscuro para el input */
+    color: #fff;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #ff00ff; /* Borde púrpura al enfocar */
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.8); /* Sombra púrpura al enfocar */
+    outline: none;
+  }
+  
+  /* Botón con Estilo Neón Único y Profesional */
+  button {
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #00ff99; /* Fondo verde neón */
+    color: white;
+    border: 2px solid #00ff99; /* Borde verde neón */
+    border-radius: 8px;
+    margin-top: 20px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.2s ease-in-out, box-shadow 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.7); /* Sombra inicial neón */
+  }
+  
+  /* Efecto en Hover con Escalado y Sombra Neón */
+  button:hover {
+    background-color: #00cc7f; /* Fondo verde más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Expansión al pasar el mouse */
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.8), 0 0 40px rgba(0, 255, 153, 0.6); /* Sombra neón intensa */
+    animation: pulse 1.5s ease-out infinite; /* Pulsación de neón */
+  }
+  
+  /* Animación de Pulsación */
+  @keyframes pulse {
+    0% {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 255, 153, 0.8), 0 0 40px rgba(0, 255, 153, 0.6);
+    }
+    50% {
+      transform: scale(1);
+      box-shadow: 0 0 15px rgba(0, 255, 153, 0.7), 0 0 30px rgba(0, 255, 153, 0.5);
+    }
+    100% {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 255, 153, 0.8), 0 0 40px rgba(0, 255, 153, 0.6);
+    }
+  }
+  
+  /* Animación de aparición */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

@@ -1,0 +1,55 @@
+:host {
+  display: block;
+  height: 100%; /* Asegura que el contenedor ocupe el 100% de la altura de la ventana */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1; /* Hace que este contenedor ocupe el espacio restante */
+}
+
+.min-h-full {
+  min-height: 100%; /* Asegura que el contenedor mínimo tenga una altura de 100% */
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.bg-gray-100 {
+  background-color: #f7fafc;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.rounded-lg {
+  border-radius: 8px;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+app-footer {
+  margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+/* Asegurar que el contenido sea scrollable pero el footer se mantenga al final */
+.flex-1.overflow-auto {
+  min-height: 0; /* Asegura que la propiedad flex-1 funcione correctamente */
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+  .p-6 {
+      padding: 1rem;
+  }
+}

@@ -1,0 +1,73 @@
+<div *ngIf="sidebarVisible" class="bg-green-700 text-white h-full overflow-y-auto">
+  <div class="p-4 bg-green-400">
+    <h2 class="text-xl font-bold">Menú Principal</h2>
+  </div>
+
+  <div class="mt-2 pb-16">
+    <ng-container *ngFor="let item of menuItems">
+      <!-- Elemento de Menú sin hijos -->
+      <a *ngIf="!item.children" 
+         [routerLink]="item.route" 
+         routerLinkActive="bg-blue-600"
+         [class.bg-blue-600]="isActive(item.route || '')"
+         class="flex items-center px-4 py-3 text-orange-600 hover:bg-gray-700 transition-colors cursor-pointer">
+        <mat-icon class="mr-3">{{ item.icon }}</mat-icon>
+        <span>{{ item.text }}</span>
+      </a>
+
+      <!-- Elemento de Menú con hijos -->
+      <mat-expansion-panel *ngIf="item.children" class="mat-elevation-z0 bg-green-300 text-white border-0">
+        <mat-expansion-panel-header (click)="toggleDescription(item)" class="px-4 py-3 hover:bg-green-300">
+          <mat-panel-title class="flex items-center text-gray-300">
+            <mat-icon class="mr-3">{{ item.icon }}</mat-icon>
+            <span>{{ item.text }}</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="pl-4">
+          <ng-container *ngFor="let child of item.children">
+            <mat-expansion-panel class="bg-green-400">
+              <mat-expansion-panel-header (click)="toggleDescription(child)">
+                <mat-panel-title>
+                  <mat-icon class="mr-2">{{ child.icon }}</mat-icon>
+                  {{ child.text }}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <div *ngIf="child.showDescription" class="p-2 text-sm text-gray-200">
+                {{ child.description }}
+
+                <mat-expansion-panel class="bg-green-500 mt-2">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>Descripcion:</mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div class="p-2 text-sm text-gray-100">
+                    {{ child.extraDetails || 'No hay descripcion.' }}
+                  </div>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel class="bg-green-600 mt-2">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>Nombre de la Unidad</mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div class="p-2 text-sm text-gray-100">
+                    {{ child.unitName || 'Unidad no especificada.' }}
+                  </div>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel class="bg-green-700 mt-2">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>Nombre del Ejercicio</mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div class="p-2 text-sm text-gray-100">
+                    {{ child.exerciseName || 'Ejercicio sin nombre.' }}
+                  </div>
+                </mat-expansion-panel>
+              </div>
+            </mat-expansion-panel>
+          </ng-container>
+        </div>
+      </mat-expansion-panel>
+    </ng-container>
+  </div>
+</div>

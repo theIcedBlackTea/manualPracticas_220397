@@ -1,0 +1,30 @@
+:host {
+    display: block;
+  }
+  
+  footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Transiciones suaves */
+  .transition-colors {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  /* Ajustes para los íconos */
+  ::ng-deep .mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+  }
+  
+  /* Responsive ajustments */
+  @media (max-width: 768px) {
+    .container {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }

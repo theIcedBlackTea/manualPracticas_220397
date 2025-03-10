@@ -1,0 +1,21 @@
+table {
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f3f4f6;  /* Color de fondo para los encabezados */
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f9fafb; /* Color alterno para las filas */
+  }
+  
+  tbody tr:hover {
+    background-color: #e5e7eb; /* Color cuando pasas el mouse sobre una fila */
+  }
+   

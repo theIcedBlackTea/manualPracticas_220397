@@ -1,0 +1,48 @@
+<mat-toolbar class="bg-blue-700 text-white shadow-md z-50 sticky top-0">
+    <div class="flex items-center justify-between w-full px-4">
+      <!-- Left side with logo and hamburger -->
+      <div class="flex items-center">
+        <button mat-icon-button (click)="toggleSidebar()" class="mr-2">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <a routerLink="/" class="text-xl font-bold">Manual de Ejercicios</a>
+        <div class="md:flex space-x-1">
+          <button mat-button [matMenuTriggerFor]="ejerciciosMenu" class="text-white">
+            Ejercicios
+            <mat-icon>arrow_drop_down</mat-icon>
+          </button>
+          <mat-menu #ejerciciosMenu="matMenu" class="mt-2">
+            <a mat-menu-item routerLink="/ejercicio-1">Ejercicio 1</a>
+            <a mat-menu-item routerLink="/ejercicio-2">Ejercicio 2</a>
+            <a mat-menu-item routerLink="/ejercicio-3">Ejercicio 3</a>
+            <a mat-menu-item routerLink="/ejercicio-4">Ejercicio 4</a>
+            <a mat-menu-item routerLink="/ejercicio-5">Ejercicio 5</a>
+            <a mat-menu-item routerLink="/ejercicio-6">Ejercicio 6</a>
+            <button mat-menu-item [matMenuTriggerFor]="moreEjercicios">Más ejercicios</button>
+          </mat-menu>
+          <mat-menu #moreEjercicios="matMenu">
+            <a mat-menu-item routerLink="/ejercicio-7">Ejercicio 7</a>
+            <a mat-menu-item routerLink="/ejercicio-8">Ejercicio 8</a>
+            <a mat-menu-item routerLink="/ejercicio-9">Ejercicio 9</a>
+            <a mat-menu-item routerLink="/ejercicio-10">Ejercicio 10</a>
+            <a mat-menu-item routerLink="/ejercicio-11">Ejercicio 11</a>
+            <a mat-menu-item routerLink="/ejercicio-12">Ejercicio 12</a>
+          </mat-menu>
+    
+          <!-- Examen dropdown -->
+          <mat-menu #examenMenu="matMenu" class="mt-2">
+            <a mat-menu-item routerLink="/examen/instrucciones">Instrucciones</a>
+            <a mat-menu-item routerLink="/examen/practico">Realizar examen</a>
+            <a mat-menu-item routerLink="/examen/resultados">Resultados</a>
+          </mat-menu>
+        </div>
+      </div>
+      
+    </div>
+    <button (click)="logout()"
+      class="mt-4 w-full bg-red-600 text-white font-bold py-2 rounded-lg 
+             hover:bg-red-700 transition-colors duration-300">
+            <mat-icon class="mr-2 align-middle">exit_to_app</mat-icon>
+Logout
+</button>
+  </mat-toolbar>
