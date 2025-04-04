@@ -26,10 +26,13 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ LoginComponent,CommonModule,FormsModule,RouterOutlet, MatButtonModule, ToolbarComponent, MatIconModule, MatMenuModule, MatToolbarModule, NavbarComponent, PageContainerComponent/*, Ejercicio01Component, Ejercicio02Component, Ejercicio03Component, Ejercicio04Component, Ejercicio05Component, Ejercicio06Component, Ejercicio07Component, Ejercicio08Component, Ejercicio09Component, Ejercicio10Component, Ejercicio11Component, Ejercicio12Component, Ejercicio13Component*/],
+  imports: [ LoginComponent,CommonModule,FormsModule,RouterOutlet, MatButtonModule, ToolbarComponent, MatIconModule, MatMenuModule, MatToolbarModule, 
+    NavbarComponent,
+     PageContainerComponent/*, Ejercicio01Component, Ejercicio02Component, Ejercicio03Component, Ejercicio04Component, Ejercicio05Component, Ejercicio06Component, Ejercicio07Component, Ejercicio08Component, Ejercicio09Component, Ejercicio10Component, Ejercicio11Component, Ejercicio12Component, Ejercicio13Component*/],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -15,6 +15,7 @@ import { Ejercicio11Component } from './ejercicio-11/ejercicio-11.component';
 import { Ejercicio12Component } from './ejercicio-12/ejercicio-12.component';
 import { Ejercicio13Component } from './ejercicio-13/ejercicio-13.component';
 import { LoginComponent } from './components/login/login.component';
+import { TablaUnoComponent } from './tabla-uno/tabla-uno.component';
 
 
 export const routes: Routes = [
@@ -40,5 +41,7 @@ export const routes: Routes = [
   {path: 'login', component: LoginComponent},
 
   // Ruta wildcard (404)
-  { path: '**', redirectTo: '/login' }
+  { path: '**', redirectTo: '/login' },
+
+  { path: 'tabla-uno', component: TablaUnoComponent}
 ];

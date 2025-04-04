@@ -4,6 +4,8 @@ import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { DataTablesModule } from 'angular-datatables'
+import { TablaUnoComponent } from '../../tabla-uno/tabla-uno.component';
 
 interface MenuItem {
   text: string;
@@ -17,15 +19,22 @@ interface MenuItem {
   showUnitName?: boolean; // Control de visibilidad del nombre de la unidad
   showExerciseName?: boolean; // Control de visibilidad del nombre del ejercicio
   unitName?: string;
-  exerciseName?: string; // Control de visibilidad de la descripción
+  exerciseName?: string;
 }
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, MatIconModule, RouterModule, MatListModule, MatExpansionModule],
+  imports: [
+    CommonModule,
+    MatIconModule, 
+    RouterModule, 
+    MatListModule, 
+    MatExpansionModule,
+    DataTablesModule
+  ],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css'
+  styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
   @Input() sidebarVisible: boolean = true;
@@ -41,11 +50,11 @@ export class SidebarComponent implements OnInit {
       icon: 'school',
       expanded: false,
       children: [
-        { text: 'Ejercicio 1', icon: 'chevron_right', route: '/ejercicio-1', description: 'Los componentes son los elementos básicos para cualquier aplicación Angula:TSclass, Template, y CSS.', showDescription: false, extraDetails: 'En Angular, puedes usar todos los CSS y HTML compatibles con el navegador que estén disponibles. Si lo deseas, puedes almacenar tu plantilla y tus estilos en archivos separados.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 1', exerciseName: 'Componentes en Angular'},
+        { text: 'Ejercicio 1', icon: 'chevron_right', route: '/ejercicio-1', description: 'Los componentes son los elementos básicos para cualquier aplicación Angular.', showDescription: false, extraDetails: 'En Angular, puedes usar todos los CSS y HTML compatibles con el navegador que estén disponibles.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 1', exerciseName: 'Componentes en Angular' },
 
-        { text: 'Ejercicio 2', icon: 'chevron_right', route: '/ejercicio-2', description: 'En Angular, la lógica y el comportamiento del componente se definen en la clase TypeScript del componente.', showDescription: false, extraDetails: 'Este es solo el comienzo de lo que es posible con las plantillas Angular, sigue aprendiendo para descubrir más.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 1', exerciseName: 'Actualización de la clase de un componente'},
+        { text: 'Ejercicio 2', icon: 'chevron_right', route: '/ejercicio-2', description: 'La lógica y el comportamiento del componente se definen en la clase TypeScript del componente.', showDescription: false, extraDetails: 'Este es solo el comienzo de lo que es posible con las plantillas Angular.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 1', exerciseName: 'Actualización de la clase de un componente' },
 
-        { text: 'Ejercicio 3', icon: 'chevron_right', route: '/ejercicio-3', description: 'La propiedad selector de la configuración del componente le proporciona un nombre para usar al hacer referencia al componente en otra plantilla.', showDescription: false, extraDetails: 'Puedes utilizar tanto marcado HTML y tantos componentes como necesites para hacer realidad la idea de tu aplicación.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 1', exerciseName: 'Composición de componentes' },
+        { text: 'Ejercicio 3', icon: 'chevron_right', route: '/ejercicio-3', description: 'La propiedad selector de la configuración del componente le proporciona un nombre para usar al hacer referencia al componente en otra plantilla.', showDescription: false, extraDetails: 'Puedes utilizar tanto marcado HTML como componentes para hacer realidad la idea de tu aplicación.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 1', exerciseName: 'Composición de componentes' },
 
         { text: 'Ejercicio 4', icon: 'chevron_right', route: '/ejercicio-4', description: 'Decidir qué mostrar en la pantalla para un usuario es una tarea común en el desarrollo de aplicaciones.', showDescription: false, extraDetails: 'Este tipo de funcionalidad se denomina flujo de control condicional. A continuación, aprenderá a repetir elementos en una plantilla. ', showUnitName: false, showExerciseName: false, unitName: 'Unidad 1', exerciseName: 'Flujo de control en componentes - @IF' },
 
@@ -63,7 +72,7 @@ export class SidebarComponent implements OnInit {
         
         { text: 'Ejercicio 11', icon: 'chevron_right', route: '/ejercicio-11', description: 'La optimización de imágenes puede ser un tema complejo, pero Angular se encarga de la mayor parte de este tema por ti, con la directiva NgOptimizedImage.', showDescription: false, extraDetails: 'Usaremos NgOptimizedImage para garantizar que tus imágenes se carguen de manera eficiente.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 1', exerciseName: 'Optimización de imágenes' },
 
-        { text: 'Ejercicio 12', icon: 'chevron_right', route: '/ejercicio-12', description: 'En la mayoría de las aplicaciones, llega un momento en el que se requiere más de una página', showDescription: false, extraDetails: 'Entonces el enrutamiento se convierte en una parte importante del rendimiento para los usuarios.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 1', exerciseName: 'Descripción general de enrutamiento (Overview)' },
+        { text: 'Ejercicio 12', icon: 'chevron_right', route: '/ejercicio-12', description: 'En la mayoría de las aplicaciones, llega un momento en el que se requiere más de una página', showDescription: false, extraDetails: 'Entonces el enrutamiento se convierte en una parte importante del rendimiento para los usuarios.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 1', exerciseName: 'Descripción general de enrutamiento (Overview)' }
       ]
     },
     {
@@ -71,10 +80,13 @@ export class SidebarComponent implements OnInit {
       icon: 'folder',
       expanded: false,
       children: [
-        { text: 'Tabla 1', icon: 'chevron_right', route: '', description: 'Primera tabla mantenida a través de forma estática', showDescription: false, extraDetails: 'Le pregunté a mi grupo su serie o película favorita.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 2', exerciseName: 'Tabla 1: Estática con temática de Pelis y Series' },
-        { text: 'Tabla 2', icon: 'chevron_right', route: '', description: 'Segunda tabla mantenida a través de forma estática', showDescription: false, extraDetails: 'Le pregunté a mi grupo si apoyaban al Team Cap o Team Iron-Man.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 2', exerciseName: 'Tabla 1: Estática con temática de Pelis y Series' },
+        { text: 'Tabla 1', icon: 'chevron_right', route: '/tabla-uno', description: 'Primera tabla mantenida a través de forma estática', showDescription: false, extraDetails: 'Le pregunté a mi grupo su serie o película favorita.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 2', exerciseName: 'Tabla 1: Estática con temática de Pelis y Series' },
+
+        { text: 'Tabla 2', icon: 'chevron_right', route: '', description: 'Segunda tabla mantenida a través de forma estática', showDescription: false, extraDetails: 'Le pregunté a mi grupo si apoyaban al Team Cap o Team Iron-Man.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 2', exerciseName: 'Tabla 2: Estática con temática de Pelis y Series' },
+        
         { text: 'Tabla 3', icon: 'chevron_right', route: '', description: 'Tercera tabla mantenida a través de forma estática', showDescription: false, extraDetails: 'Alch no me acuerdo de qué era ésta tabla.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 2', exerciseName: 'Tabla 4: Estática con temática de Pelis y Series' },
-        { text: 'Tabla 4', icon: 'chevron_right', route: '', description: 'Tercera tabla mantenida a través de forma estática', showDescription: false, extraDetails: 'Alch no me acuerdo de qué era ésta tabla.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 2', exerciseName: 'Tabla 4: Estática con temática de Pelis y Series' },
+
+        { text: 'Tabla 4', icon: 'chevron_right', route: '', description: 'Tercera tabla mantenida a través de forma estática', showDescription: false, extraDetails: 'Alch no me acuerdo de qué era ésta tabla.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 2', exerciseName: 'Tabla 4: Estática con temática de Pelis y Series' }
       ]
     }
   ];
@@ -99,14 +111,14 @@ export class SidebarComponent implements OnInit {
   }
 
   toggleDescription(item: MenuItem) {
-  if (item) {
-    item.showDescription = !item.showDescription;
+    if (item) {
+      item.showDescription = !item.showDescription;
 
-    if (item.route) {
-      this.router.navigate([item.route]); // Redirige a la ruta del ejercicio
+      if (item.route) {
+        this.router.navigate([item.route]); // Redirige a la ruta del ejercicio
+      }
     }
   }
-}
 
   // Verificar si un ítem está activo
   isActive(route: string): boolean {
