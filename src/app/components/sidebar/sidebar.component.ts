@@ -37,7 +37,7 @@ export class SidebarComponent implements OnInit {
       route: '/home'
     },
     {
-      text: 'Ejercicios',
+      text: 'Unidad 1',
       icon: 'school',
       expanded: false,
       children: [
@@ -64,6 +64,17 @@ export class SidebarComponent implements OnInit {
         { text: 'Ejercicio 11', icon: 'chevron_right', route: '/ejercicio-11', description: 'La optimización de imágenes puede ser un tema complejo, pero Angular se encarga de la mayor parte de este tema por ti, con la directiva NgOptimizedImage.', showDescription: false, extraDetails: 'Usaremos NgOptimizedImage para garantizar que tus imágenes se carguen de manera eficiente.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 1', exerciseName: 'Optimización de imágenes' },
 
         { text: 'Ejercicio 12', icon: 'chevron_right', route: '/ejercicio-12', description: 'En la mayoría de las aplicaciones, llega un momento en el que se requiere más de una página', showDescription: false, extraDetails: 'Entonces el enrutamiento se convierte en una parte importante del rendimiento para los usuarios.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 1', exerciseName: 'Descripción general de enrutamiento (Overview)' },
+      ]
+    },
+    {
+      text: 'Unidad 2',
+      icon: 'folder',
+      expanded: false,
+      children: [
+        { text: 'Tabla 1', icon: 'chevron_right', route: '', description: 'Primera tabla mantenida a través de forma estática', showDescription: false, extraDetails: 'Le pregunté a mi grupo su serie o película favorita.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 2', exerciseName: 'Tabla 1: Estática con temática de Pelis y Series' },
+        { text: 'Tabla 2', icon: 'chevron_right', route: '', description: 'Segunda tabla mantenida a través de forma estática', showDescription: false, extraDetails: 'Le pregunté a mi grupo si apoyaban al Team Cap o Team Iron-Man.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 2', exerciseName: 'Tabla 1: Estática con temática de Pelis y Series' },
+        { text: 'Tabla 3', icon: 'chevron_right', route: '', description: 'Tercera tabla mantenida a través de forma estática', showDescription: false, extraDetails: 'Alch no me acuerdo de qué era ésta tabla.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 2', exerciseName: 'Tabla 4: Estática con temática de Pelis y Series' },
+        { text: 'Tabla 4', icon: 'chevron_right', route: '', description: 'Tercera tabla mantenida a través de forma estática', showDescription: false, extraDetails: 'Alch no me acuerdo de qué era ésta tabla.', showUnitName: false, showExerciseName: false, unitName: 'Unidad 2', exerciseName: 'Tabla 4: Estática con temática de Pelis y Series' },
       ]
     }
   ];

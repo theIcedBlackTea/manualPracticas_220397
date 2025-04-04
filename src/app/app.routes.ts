@@ -16,6 +16,7 @@ import { Ejercicio12Component } from './ejercicio-12/ejercicio-12.component';
 import { Ejercicio13Component } from './ejercicio-13/ejercicio-13.component';
 import { LoginComponent } from './components/login/login.component';
 
+
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
